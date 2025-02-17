@@ -10,16 +10,16 @@ namespace StringTutorial
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a string to encrypt:");
-            
+            Console.Write("Enter a string to encrypt:"); 
 
             try
             {
-                
+                string message = Console.ReadLine();
+                string encryptedMessage = EncryptString(message);
             }
-            catch ()
+            catch (FormatException)
             {
-                  
+                Console.WriteLine("Incorect Input");
             }
             finally
             {
@@ -31,19 +31,26 @@ namespace StringTutorial
         static string EncryptString(string inputString)
         {
             // Guard clause to check if input is a valid string
-            
+
             // Reverse the string
-            
+            char[] cArray = inputString.ToCharArray();
+            string reverse = String.Empty;
+            for (int i = cArray.Length - 1; i > -1; i--)
+            {
+                reverse += cArray[i];
+            }
 
             // Convert every second charatcer to uppercase
-           
+            string multiCase = String.Empty;
+
 
             // Interpolateion and concatenation
-          
+            string secretCode = "secret-" + multiCase + "-code";
+
 
             // String conversion using ASCII values to shift each character by 1
-            
-            
+
+
             string finalEncryption = new string(finalEncryptionChars);
             return finalEncryption;
         }
